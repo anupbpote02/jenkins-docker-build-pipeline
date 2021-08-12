@@ -1,5 +1,5 @@
 pipeline{
- agent {label 'linux'}
+ agent any
   stages{
     stage("Git Checkout"){
        steps{
@@ -8,8 +8,8 @@ pipeline{
       }
      stage ('docker build image') { 
         steps {  
-                 sh 'docker login '
-                 sh 'docker build -t anupbpote/myimage5 . '
+                 ps 'docker login '
+                 ps 'docker build -t anupbpote/myimage5 . '
                 }
             }
      }
