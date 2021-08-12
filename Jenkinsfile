@@ -4,7 +4,6 @@ pipeline{
     stage("Git Checkout"){
        steps{
         checkout scm
-        sh 'ls -lat'
        }
       }
      }
