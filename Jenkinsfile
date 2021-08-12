@@ -8,8 +8,8 @@ pipeline{
       }
      stage ('docker build image') { 
         steps {  
-                 ps 'docker login '
-                 ps 'docker build -t anupbpote/myimage5 . '
+                 sh 'docker login '
+                 sh 'docker build -t anupbpote/myimage5 . '
                 }
             }
      }
