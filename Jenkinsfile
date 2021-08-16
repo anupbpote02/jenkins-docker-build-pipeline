@@ -8,7 +8,7 @@ pipeline{
       }
      stage ('docker build image') { 
         steps {  
-                 sh 'docker login -u anupbpote -p @Nup_2499 '
+                 sh 'docker login --username anupbpote --password @Nup_2499 '
                  sh 'docker build -t anupbpote/myimage5 . '
                 }
             }
