@@ -1,4 +1,14 @@
 pipeline{
+ 
+ environment {
+
+        registry = "anupbpote/myimage5" 
+        DOCKER_USERNAME = "anupbpote"
+        DOCKER_PASSWORD = "@Nup_2499"
+        dockerImage = '' 
+
+    }
+
  agent any
   stages{
     stage("Git Checkout"){
@@ -8,7 +18,7 @@ pipeline{
       }
      stage ('docker build image') { 
         steps {  
-                 sh 'docker login --username anupbpote --password-stdin @Nup_2499 '
+                 sh "docker login --username $DOCKER_USERNAME --password-stdin $DOCKER_PASSWORD "
                  sh 'docker build -t anupbpote/myimage5 . '
                 }
             }
